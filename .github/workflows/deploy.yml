@@ -1,0 +1,59 @@
+#name: Deploy FastAPI to EC2
+
+#on:
+#  push:
+#    branches:
+#      - master
+
+#jobs:
+#  deploy:
+#    runs-on: ubuntu-latest
+
+#    steps:
+      # Étape 1 : Récupérer le code source
+#      - name: Checkout code
+#        uses: actions/checkout@v2
+
+      # Étape 2 : Configurer Python
+#      - name: Set up Python
+#        uses: actions/setup-python@v2
+#        with:
+#          python-version: 3.8
+
+      # Étape 3 : Installer les dépendances
+#      - name: Install dependencies
+#        run: |
+#          python -m venv env
+#          source env/bin/activate
+#          pip install -r requirements.txt
+
+      # Étape 4 : Exécuter les tests unitaires
+#      - name: Run unit tests
+#        run: |
+#          source env/bin/activate
+#          pip install pytest
+#          pytest
+
+      # Étape 5 : Copier les fichiers vers l'instance EC2
+#      - name: Copy files via SSH
+#        uses: appleboy/scp-action@v0.0.1
+#        with:
+#          host: ${{ secrets.EC2_HOST }}
+#          username: ${{ secrets.EC2_USER }}
+#          key: ${{ secrets.EC2_KEY }}
+#          source: "."
+#          target: "/home/ec2-user/FastApi-Project"
+
+      # Étape 6 : Exécuter les commandes à distance pour déployer l'application
+#      - name: Execute remote commands via SSH
+#        uses: appleboy/ssh-action@master
+#        with:
+#          host: ${{ secrets.EC2_HOST }}
+#          username: ${{ secrets.EC2_USER }}
+#          key: ${{ secrets.EC2_KEY }}
+#          script: |
+#            cd /home/ec2-user/FastApi-Project
+#            python -m venv env
+#            source env/bin/activate
+#            pip install -r requirements.txt
+#            sudo systemctl restart fastapi
