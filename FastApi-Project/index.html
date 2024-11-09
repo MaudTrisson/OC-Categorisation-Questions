@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Prédiction d'étiquette</title>
+        <link rel="stylesheet" href="/static/style.css">
+    </head>
+    <body>
+        <h1>Entrez le titre du sujet pour obtenir une étiquette</h1>
+        <form id="title-form">
+            <input type="text" id="title" name="title">
+            <button type="submit">Envoyer</button>
+        </form>
+
+        <p id="result"></p>
+
+        <script>
+            const form = document.getElementById('title-form');
+            form.addEventListener('submit', async (event) => {
+                event.preventDefault();
+
+                const title = document.getElementById('title').value;
+
+                try {
+                    const response = await fetch('/predict/', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ title: title }),
+                    });
+
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+
+                    const result = await response.json();
+                    document.getElementById('result').innerText = 'Étiquette prédite: ' + result.label;
+                } catch (error) {
+                    console.error('There was an error!', error);
+                    document.getElementById('result').innerText = 'Erreur lors de la prédiction.';
+                }
+            });
+        </script>
+    </body>
+</html>

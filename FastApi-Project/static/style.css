@@ -1,0 +1,44 @@
+body {
+    font-family: sans-serif;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+form {
+    display: flex;
+    width: 70%;
+    justify-content: center;
+    margin: auto;
+}
+
+label {
+    margin-right: 10px;
+}
+
+input, button {
+    padding: 5px 10px;
+}
+
+input {
+    border-radius: 15px;
+    border: 1px solid black;
+    width: 70%;
+}
+
+button {
+    background-color: orange;
+    border-radius: 15px;
+    border: none;
+    color: white;
+    font-weight: bold;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: 
+}
