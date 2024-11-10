@@ -40,5 +40,10 @@ button {
 }
 
 button:hover {
-    background-color: 
+    background-color: #e89e1e;
+}
+
+#result {
+    text-align: center;
+    margin-top: 50px;
 }

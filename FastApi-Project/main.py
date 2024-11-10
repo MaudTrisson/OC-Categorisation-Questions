@@ -9,17 +9,16 @@ model = joblib.load('countvectorizer-lda-fit-on-title-and-transform-on-title-bod
 vectorizer = joblib.load('countvectorizer-lda-fit-on-title-and-transform-on-title-body_vectorizer.pkl')  # Charger le CountVectorizer utilisé lors de l'entraînement
 
 topic_labels = {
-    0: "Sport",
-    1: "Politique",
-    2: "Technologie",
-    3: "Santé",
-    4: "Sport",
-    5: "Politique",
-    6: "Technologie",
-    7: "Santé",
-    8: "Santé",
-    9: "Santé",
-    10: "Santé",
+    0: "'value', 'int', 'std', 'node', 'const', 'return', 'array', 'expo', 'list', 'char'",
+    1: "'div', 'class', 'button', 'id', 'page', 'html', 'text', 'style', 'script', 'li'",
+    2: "'app', 'error', 'server', 'http', 'using', 'client', 'service', 'api', 'use', 'run'",
+    3: "'user', 'model', 'name', 'form', 'image', 'class', 'import', 'request', 'data', 'post'",
+    4: "'file', 'lib', 'package', 'python', 'line', 'error', 'py', 'module', 'project', 'build'",
+    5: "'file', 'write', 'function', 'code', 'wait', 'operation', 'ctrl', 'stat', 'name', 'document'",
+    6: "'string', 'id', 'data', 'public', 'return', 'new', 'get', 'type', 'value', 'null'",
+    7: "'android', 'const', 'import', 'color', 'react', 'text', 'component', 'app', 'self', 'layout'",
+    8: "'data', 'df', 'column', 'value', 'output', 'self', 'row', 'model', 'like', 'input'",
+    9: "'java', 'org', 'com', 'springframework', 'version', 'spring', 'dependency', 'jar', 'import', 'core'",
 }
 
 # Création de l'application FastAPI

@@ -37,7 +37,7 @@
                     }
 
                     const result = await response.json();
-                    document.getElementById('result').innerText = 'Étiquette prédite: ' + result.label;
+                    document.getElementById('result').innerText = "Corpus d'étiquettes prédit: " + result.label;
                 } catch (error) {
                     console.error('There was an error!', error);
                     document.getElementById('result').innerText = 'Erreur lors de la prédiction.';
